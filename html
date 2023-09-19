@@ -1,0 +1,86 @@
+<body>
+    <nav id="nav">
+        
+        <div class="nav__container container">
+            <div class="nav__row row">
+                <div class="logo">
+                    <i class="fa-solid fa-clapperboard"></i>
+                    <h2 class="logo__name">Movies</h2>
+                </div>
+                <ul class="nav__lists">
+                    <li class="nav__list">
+                        <a href="#search" class="nav__link link__hover--effect">
+                            Search
+                        </a>
+                    </li>
+                    <li class="nav__list">
+                        <a href="#" class="nav__link link__hover--effect">
+                            Home
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav__main row">
+                <h1 class="nav__main--title" id="search">Browse Our <span class="red">Movies.</span></h1>
+                <form class="search" onsubmit="renderMovies(event); return false">
+                    <input type="text" placeholder="Search" class="search__input" maxlength="18">
+                    <button class="search__button"><i class="fa-solid fa-magnifying-glass" onclick="renderMovies(event); return false"></i></button>
+                </form>
+            </div>
+
+            <figure class="nav__gif--wrapper">
+                <img class="nav__gif" src="./assets/movie-spongebob.gif" alt="">
+            </figure>
+        </div>
+
+    </nav>
+
+
+    <section id="popular">
+        <div class="container ">
+            <div class="row popular__row">
+                <div class="section__title">
+                    <h2 class="movie__title">Search Results for: </h2>
+                    <select 
+                    id="filter"
+                    class="filter__movies"
+                    onchange="filterMovies(event)"
+                    >
+                        <option value="" disabled selected>Sort</option>
+                        <option value="NEW_TO_OLD">Newest to Oldest</option>
+                        <option value="OLD_TO_NEW">Oldest to Newest</option>
+                    </select>
+                </div>
+                <div class="movies">
+                    
+                </div>
+
+                <div class="movies__loading">
+                    <i class="fa-solid fa-spinner"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer__row row">
+                <div class="logo">
+                    <i class="fa-solid fa-clapperboard white"></i>
+                    <h2 class="logo__name white">Movies</h2>
+                </div>
+                <h4 class="copyright__text white">Copyright &copy; Haroon Hakimi</h4>
+                <ul class="nav__lists">
+                    <li class="nav__list">
+                        <a href="#search" class="nav__link link__hover--effect white">
+                            search
+                        </a>
+                    </li>
+                    <li class="nav__list">
+                         <a href="#nav" class="nav__link link__hover--effect white">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
