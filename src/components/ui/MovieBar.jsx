@@ -3,6 +3,8 @@ import React from "react";
 function MovieBar({ title, subTitle }) {
   return (
     <>
+    <div className="container">
+      <div className="row">
       <div class="section__title">
         <h2 class="movie__title">
           {title} <span className="red">{subTitle}</span>
@@ -19,6 +21,9 @@ function MovieBar({ title, subTitle }) {
           <option value="OLD_TO_NEW">Oldest to Newest</option>
         </select>
       </div>
+      </div>
+    </div>
+      
     </>
   );
 }

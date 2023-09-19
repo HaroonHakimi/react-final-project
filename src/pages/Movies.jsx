@@ -12,15 +12,16 @@ function Movies({ event }) {
   // useEffect(() => {
   //     fetchMovie()
   // },[])
- 
+
   function filterMovies() {}
 
   return (
     <>
-      <MovieBar title={`Search Results for ${event}`} subTitle={" "} />
-      <div class="movies">
-        
-      </div>
+      <MovieBar 
+      title={`Search Results for ${event}`} 
+      subTitle={" "} 
+      />
+      <div class="movies"></div>
     </>
   );
 }
