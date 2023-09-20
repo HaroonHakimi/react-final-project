@@ -1,24 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function Nav(event) {
-  const [movies, setMovies] = useState([]);
 
-  let navigate = useNavigate();
-
-  async function fetchPosts(event) {
-    const { data } = await axios.get(
-      `https://www.omdbapi.com/?apikey=5c0a8d0&s=${event}`
-    );
-    setMovies(data);
-  }
-
-  useEffect(() => {
-    fetchPosts();
-    console.log("this ran");
-  }, []);
+function Nav() {
 
   return (
     <>
@@ -36,43 +21,13 @@ function Nav(event) {
                 </a>
               </li>
               <li className="nav__list">
-                <a href="#" className="nav__link link__hover--effect">
+                <Link to='/' className="nav__link link__hover--effect">
                   Home
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
-          <div className="nav__main row">
-            <h1 className="nav__main--title" id="search">
-              Browse Our <span className="red">Movies.</span>
-            </h1>
-            <form
-              className="search"
-              onSubmit={(event) => {
-                if (event.target.value === 'Enter') 
-                {
-                  fetchPosts(event.target.value)
-                  navigate("/movies");
-                }
-              }}
-            >
-              <input
-                type="text"
-                placeholder="Search"
-                className="search__input"
-                maxLength="18"
-              />
-              <button className="search__button">
-                <FontAwesomeIcon
-                  icon="fa-solid fa-magnifying-glass"
-                  onClick={(event) => {
-                    fetchPosts(event.target.value);
-                    navigate("/movies");
-                  }}
-                />
-              </button>
-            </form>
-          </div>
+          
         </div>
       </nav>
     </>

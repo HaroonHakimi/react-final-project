@@ -50,7 +50,8 @@ button
 
 .container
 {
-    padding: 64px 0;
+    padding-bottom: 64px 0;
+    padding-top: 64px;
 }
 
 h2, h3, h4, a
@@ -82,6 +83,7 @@ h2, h3, h4, a
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 64px;
 }
 
 .nav__row
@@ -150,6 +152,7 @@ h2, h3, h4, a
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 40px 0;
 }
 
 .nav__main--second
@@ -161,7 +164,7 @@ h2, h3, h4, a
 {
     font-size: 86px;
     letter-spacing: 10px;
-    margin: 40px 0 32px 0;
+    margin: 0 32px 0;
 }
 
 .search
@@ -256,6 +259,8 @@ h2, h3, h4, a
 {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .movie__title
@@ -331,11 +336,36 @@ h2, h3, h4, a
     }
 }
 
+.movie__poster--skeleton
+{
+    background-color: lightgray;
+    width: 300px;
+    height: 350px;
+    margin-bottom: 24px;
+}
+
+.movie__title--skeleton
+{
+    background-color: lightgray;
+    width: 270px;
+    height: 30px;
+}
+
+.skeleton__wrapper
+{
+    padding-bottom: 40px;
+}
+
 /* FOOTER */
 
 footer
 {
     background-color: #242424;
+}
+
+.footer__container
+{
+    padding: 64px 0;
 }
 
 .footer__row

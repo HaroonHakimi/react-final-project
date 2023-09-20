@@ -5,7 +5,7 @@ function Footer() {
   return (
     <>
       <footer>
-        <div class="container">
+        <div class="footer__container">
           <div class="footer__row row">
             <div class="logo">
               <FontAwesomeIcon icon="fa-solid fa-clapperboard" className="white"/>

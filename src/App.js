@@ -3,6 +3,7 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Movies from './pages/Movies';
+import SearchBar from './components/ui/SearchBar';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
     <Nav/>
       <Routes> 
         <Route path='/' element={<Home/>}/>
-        <Route path='/movies'element={<Movies/>}/>
+        <Route path='/:search'element={<Movies/>}/>
       </Routes>
       <Footer/>
     </Router>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function MovieBar({ title, subTitle }) {
+function MovieBar({ title, subTitle, onChange }) {
   return (
     <>
     <div className="container">
@@ -12,9 +12,9 @@ function MovieBar({ title, subTitle }) {
         <select
           id="filter"
           class="filter__movies"
-          onchange="filterMovies(event)"
+          onChange={onChange}
         >
-          <option value="" defaultValue>
+          <option value="" defaultValue="">
             Sort
           </option>
           <option value="NEW_TO_OLD">Newest to Oldest</option>
