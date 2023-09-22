@@ -54,7 +54,7 @@ function Movies({  }) {
               ))
             : movies.slice(0, 6).map((movie) => (
                 <div className=" movie ">
-                  <figure className="movie__img--wrapper" onClick={() => navigate(`/:search/:${movie.id}`)}>
+                  <figure className="movie__img--wrapper" onClick={() => navigate(`/search/${movie.imdbID}`)}>
                     <img src={movie.Poster} className="movie__img" alt="" />
                   </figure>
                   <h2 className="movie__title">{movie.Title}</h2>

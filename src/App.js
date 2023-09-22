@@ -14,7 +14,7 @@ function App() {
       <Routes> 
         <Route path='/' element={<Home/>}/>
         <Route path='/:search'element={<Movies/>}/>
-        <Route path='/:search/:id' element={<MovieInfo/>}/>
+        <Route path='/:search/:imdbID' element={<MovieInfo/>}/>
       </Routes>
       <Footer/>
     </Router>
