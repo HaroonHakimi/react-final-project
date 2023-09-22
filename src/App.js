@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Movies from './pages/Movies';
 import SearchBar from './components/ui/SearchBar';
+import MovieInfo from './pages/MovieInfo';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes> 
         <Route path='/' element={<Home/>}/>
         <Route path='/:search'element={<Movies/>}/>
+        <Route path='/:search/:id' element={<MovieInfo/>}/>
       </Routes>
       <Footer/>
     </Router>
