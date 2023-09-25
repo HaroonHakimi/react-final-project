@@ -7,8 +7,8 @@ function Footer() {
       <footer>
         <div className="footer__container">
           <div className="footer__row row">
-            <div className="logo">
-              <FontAwesomeIcon icon="fa-solid fa-clapperboard" className="white"/>
+            <div className="logo ">
+              <FontAwesomeIcon className="invert" icon="fa-solid fa-clapperboard"/>
               <h2 className="logo__name white">Movies</h2>
             </div>
             <h4 className="copyright__text white">

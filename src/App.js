@@ -3,7 +3,6 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Movies from './pages/Movies';
-import SearchBar from './components/ui/SearchBar';
 import MovieInfo from './pages/MovieInfo';
 
 function App() {

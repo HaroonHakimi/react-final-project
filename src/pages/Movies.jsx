@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-import MovieBar from "../components/ui/MovieBar";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import SearchBar from "../components/ui/SearchBar";
 
-function Movies({  }) {
-  const navigate = useNavigate()
+function Movies({}) {
+  const navigate = useNavigate();
   const { search } = useParams();
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -24,10 +23,10 @@ function Movies({  }) {
 
   function filterMovies(filter) {
     if (filter === `NEW_TO_OLD`) {
-      setMovies(movies.sort((a, b) => b.Year - a.Year));
+      setMovies(movies.slice().sort((a, b) => b.Year - a.Year));
     }
     if (filter === `OLD_TO_NEW`) {
-      setMovies(movies.sort((a, b) => a.Year - b.Year));
+      setMovies(movies.slice().sort((a, b) => a.Year - b.Year));
     }
   }
 
@@ -38,11 +37,27 @@ function Movies({  }) {
   return (
     <>
       <SearchBar />
-      <MovieBar
-        title={`Search Results for:`}
-        subTitle={`${search}`}
-        onChange={(event) => filterMovies(event.target.value)}
-      />
+      <div className="container">
+        <div className="row">
+          <div class="section__title">
+            <h2 class="movie__title search__bar--title">
+              Search Results For: <span className="red">{`${search}`}</span>
+            </h2>
+            <select
+              id="filter"
+              class="filter__movies"
+              onChange={(event) => filterMovies(event.target.value)}
+              defaultValue="DEFAULT"
+            >
+              <option value="DEFAULT" disabled>
+                Sort
+              </option>
+              <option value="NEW_TO_OLD">Newest to Oldest</option>
+              <option value="OLD_TO_NEW">Oldest to Newest</option>
+            </select>
+          </div>
+        </div>
+      </div>
       <div className="row">
         <div className="movies">
           {isLoading
@@ -52,17 +67,18 @@ function Movies({  }) {
                   <div className="movie__title--skeleton"></div>
                 </div>
               ))
-            : movies.slice(0, 6).map((movie) => (
+            : movies.slice(0, 9).map((movie) => (
                 <div className=" movie ">
-                  <figure className="movie__img--wrapper" onClick={() => navigate(`/search/${movie.imdbID}`)}>
+                  <div className="movie__img--wrapper--color">
+                  <figure
+                    className="movie__img--wrapper "
+                    onClick={() => navigate(`/search/${movie.imdbID}`)}
+                  >
                     <img src={movie.Poster} className="movie__img" alt="" />
                   </figure>
+                  </div>
                   <h2 className="movie__title">{movie.Title}</h2>
-                  {/* <div className="movie__wrapper--bg"></div>
-                  <div className="movie__wrapper--description">
-                    <div className="movie__wrapper--title">More Info</div>
-                    <div className="movie__wrapper--btn"></div>
-                  </div> */}
+                  
                 </div>
               ))}
         </div>
@@ -72,5 +88,3 @@ function Movies({  }) {
 }
 
 export default Movies;
-
-
